@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Quote start wars</title>
+</head>
+
+<body>
+   <main class="main">
+
+
+      <h1 class="shere header">add a list of quotes from Star Wars Characters</h1>
+      <section class="shere add-quotes">
+         <h2>Add Quotes</h2>
+         <form action="/quotes" method="POST">
+            <input class="name" type="text" placeholder="Name" name="name" />
+            <input class="quote" type="text" placeholder="Quote" name="quote" />
+            <button class="btn" type="submit">Submit</button>
+         </form>
+      </section>
+      <section class="shere update-quote">
+         <div>
+            <h2>Darth Vadar invades!</h2>
+            <p>
+               Replace first Yoda's quote with a quote written by Darth Vadar
+            </p>
+            <button class="btn" id="update-button">Replace Yoda's quote</button>
+         </div>
+      </section>
+      <section class="shere delete-quote">
+         <div>
+            <h2>Remove Darth Vadar!</h2>
+            <p>
+               Delete one Darth Vadar's quote. Does nothing if there are no more
+               Darth Vadar's quote
+            </p>
+            <button class="btn" id="delete-button">Delete Darth Vadar's quote</button>
+         </div>
+         <div id="message"></div>
+      </section>
+      <section class="shere quotes">
+         <h2> Quotes </h2>
+         <ul class="quotes">
+            <!-- Loop through quotes -->
+            <% for(var i = 0; i < quotes.length; i++) {%>
+            <li class="quote">
+               <!-- Output name from the iterated quote object -->
+               <span class="quote-name"><%= quotes[i].name %> :</span>
+               <!-- Output quote from the iterated quote object -->
+               <span><%= quotes[i].quote %></span>
+            </li>
+            <% } %>
+         </ul>
+      </section>
+
+   </main>
+   <script src="/main.js"></script>
+</body>
+
+</html>

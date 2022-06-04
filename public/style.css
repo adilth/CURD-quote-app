@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  /* text-align: center; */
+  height: 100vh;
+  line-height: 1.4;
+}
+ul {
+  list-style: none;
+}
+.main {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto 2fr;
+  grid-template-areas:
+    "header header header"
+    "add-quotes update-quote delete-quote"
+    "quotes quotes quotes";
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  background-color: hsl(175, 90%, 80%);
+  background-attachment: fixed;
+  background-size: cover;
+}
+.header {
+  grid-area: header;
+}
+h1 {
+  text-align: center;
+}
+.add-quotes {
+  grid-area: add-quotes;
+}
+
+.update-quotes {
+  grid-area: update-quotes;
+}
+
+.delete-quotes {
+  grid-area: delete-quotes;
+}
+
+.quotes {
+  grid-area: quotes;
+  /* overflow: scroll; */
+}
+.shere {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+input {
+  display: block;
+  padding: 0.6em;
+  width: calc(100% - 2rem);
+  border: 2px solid rgb(148, 137, 137);
+  border-radius: 5px;
+}
+input::placeholder {
+  padding-left: 0.5em;
+  font-size: 1rem;
+}
+.quote {
+  margin-top: 0.7em;
+}
+
+.btn {
+  margin-top: 1em;
+  font-size: 1.1rem;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  border: none;
+  background-color: hsl(175, 90%, 80%);
+  color: rgb(92, 92, 92);
+  font-weight: bold;
+}
+
+h2 {
+  margin-bottom: 0.7em;
+}
+.quote-name {
+  font-weight: bold;
+}
