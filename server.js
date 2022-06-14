@@ -4,10 +4,9 @@ const bodyParser = require("body-parser");
 const { MongoClient } = require("mongodb");
 const mongoClient = require("mongodb").mongoClient;
 const port = process.env.PORT || 3030;
+require("dotenv").config();
 
-const connectS =
-  "mongodb+srv://adilth:adilth1995@quote.nyz54.mongodb.net/?retryWrites=true&w=majority";
-MongoClient.connect(connectS, { useUnifiedTopology: true })
+MongoClient.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true })
   .then((client) => {
     console.log("connet");
 
